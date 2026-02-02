@@ -2066,7 +2066,7 @@
         const availableBooks = books.filter((book) => book.available > 0);
         const activeBorrows = getActiveBorrows();
         console.log(activeBorrows);
-        
+
         const filteredHistory = getFilteredHistory();
 
         if (loading) {
@@ -3543,11 +3543,11 @@
             const totalMembers = members.length;
             // Calculate active borrows (books that are checked out)
             console.log(books);
-            
+
             const activeBorrows = books.reduce((sum, book) => {
               return sum + ((book.quantity || 0) - (book.available || 0));
             }, 0);
-
+            console.log(activeBorrows);
             setStats({
               totalBooks,
               availableBooks,
@@ -3557,11 +3557,9 @@
 
             // Get recent books (last 5)
             setRecentBooks(books.slice(-5).reverse());
-            console.log(recentBooks);
 
             // Get recent members (last 5)
             setRecentMembers(members.slice(-5).reverse());
-            console.log(recentMembers);
           } catch (error) {
             console.error("Error loading dashboard data:", error);
           } finally {
