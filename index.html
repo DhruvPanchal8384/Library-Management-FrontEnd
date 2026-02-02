@@ -2065,6 +2065,8 @@
 
         const availableBooks = books.filter((book) => book.available > 0);
         const activeBorrows = getActiveBorrows();
+        console.log(activeBorrows);
+        
         const filteredHistory = getFilteredHistory();
 
         if (loading) {
