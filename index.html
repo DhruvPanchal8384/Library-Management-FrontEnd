@@ -3542,6 +3542,8 @@
 
             const totalMembers = members.length;
             // Calculate active borrows (books that are checked out)
+            console.log(books);
+            
             const activeBorrows = books.reduce((sum, book) => {
               return sum + ((book.quantity || 0) - (book.available || 0));
             }, 0);
